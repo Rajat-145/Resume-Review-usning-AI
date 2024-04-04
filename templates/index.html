@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Analysis</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="job">Enter your Job:</label>
+            <input type="text" id="job" name="job" required>
+
+            <label for="resume">Upload your Resume (PDF):</label>
+            <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

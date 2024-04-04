@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result for {{ job }}</h1>
+
+        <div class="analysis">
+            <h2>Resume Score and Analysis:</h2>
+            <p>{{ analysis|safe }}</p>
+        </div>
+
+        <div class="videos">
+            <h2>YouTube Video Suggestions:</h2>
+            <ul>
+                {% for video in videos %}
+                    <li>
+                        <strong>Title:</strong> {{ video['title'] }}<br>
+                        <strong>Video ID:</strong> {{ video['video_id'] }}<br>
+                        <strong>Video URL:</strong> <a href="{{ video['video_url'] }}" target="_blank">{{ video['video_url'] }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
